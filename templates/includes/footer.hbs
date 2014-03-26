@@ -1,0 +1,25 @@
+<footer class="bs-footer" role="contentinfo">
+  <div class="container">
+
+    {{#if production}}
+      {{> social-buttons }}
+    {{/if}}
+
+    <p><a href="https://github.com/assemble/assemble" target="_blank">Logsearch </a>&nbsp;was created by <a href="https://twitter.com/x" target="_blank"> X </a>&nbsp;and <a href="http://twitter.com/y" target="_blank"> Y</a>.</p>
+    <p>Documentation source code released under the <a href="{{ site.license.url }}" target="_blank">{{ site.license.type }}&nbsp;</a> License, documentation under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License, Version 2.0</a>.</p>
+    <ul class="footer-links">
+      <li>Currently v{{ site.assemble.latest }}</li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.url.blog }}">Blog</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.url.bugs }}/issues?state=open">Issues</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.url.repo }}/blob/master/CHANGELOG.md">Changelog</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="{{ site.url.repo }}/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- "back-to-top" button -->
+<a href="#" style="right: 70px;" class="btn back-to-top btn-dark btn-fixed-bottom"> <span class="glyphicon glyphicon-chevron-up"></span> </a>
