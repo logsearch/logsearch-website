@@ -28,7 +28,7 @@ plugins:
 # Theme
 theme:            theme
 components:       <%= site.theme %>/components
-
+images:           <%= site.theme %>/images
 
 # =============================================
 # Project metadata
@@ -51,7 +51,7 @@ download:
 
 brand:            LOGSEARCH
 title:            LOGSEARCH
-lead:             Search logs with ELK.
+lead:             The easiest way to search logs using the power of "ELK"
 
 version:          <%= pkg.version %>
 description:      <%= pkg.description %>
