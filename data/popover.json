@@ -26,5 +26,9 @@
 			"k": "http://www.elasticsearch.org/overview/kibana/"
 		},
 		"text": "ELK stands for <a href='<%= popover.elk.link.e %>' target='_blank' title=''>Elasticsearch</a>, <a href='<%= popover.elk.link.l %>' target='_blank' title=''>Logstash</a>, <a href='<%= popover.elk.link.k %>' target='_blank' title=''>Kibana</a>."
+	},
+	"anomaly": {
+		"icon": "info-sign",
+		"text": "Anomaly detection is coming soon!! Be sure to subscribe to the Newsletter so that you don't miss out on the release"
 	}
 }
