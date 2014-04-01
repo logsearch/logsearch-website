@@ -5,7 +5,7 @@
 <meta name="author" content="http://twitter.com/jonschlinkert, http://twitter.com/doowb">
 
 <title>
-  {{default title page.basename}} | {{site.title}}
+    {{default title page.basename}} | {{site.title}}
 </title>
 
 <!-- Stylesheets -->
@@ -13,12 +13,13 @@
 <link rel="stylesheet" href="{{assets}}/css/github.css">
 
 {{#if production}}
-<!-- Webfonts -->
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700">
+	<!-- Webfonts -->
+	<link rel="stylesheet" type="text/css"
+		  href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700">
 {{/if}}
 
 <!--[if lt IE 9]>
-  <script src="{{ assets }}/js/ie8-responsive-file-warning.js"></script>
+<script src="{{ assets }}                                  "></script>
 <![endif]-->
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,5 +35,5 @@
 
 {{!-- Google Analytics --}}
 {{#if production}}
-  {{ga}} {{! see ./templates/helpers/ga.js }}
+    {{ga}} {{! see ./templates/helpers/ga.js }}
 {{/if}}

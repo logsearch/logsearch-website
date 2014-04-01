@@ -2,15 +2,27 @@
 // Belt
 // --------------------------------------------------
 
-
-
 .belt {
-  padding: 15px 20px;
-  color: #777;
-  background-color: #fafafa;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #e5e5e5;
-  strong {
-    color: #555;
-  }
+	padding: 15px 20px;
+	color: #777;
+	background-color: #fafafa;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e5e5e5;
+
+	strong {
+		color: #555;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 34px;
+		margin-right: 20px;
+	}
+
+	.form-inline {
+		display: inline-table;
+	}
+
+	.form-control {
+		min-width: 250px;
+		border-radius: @border-radius-base 0 0 @border-radius-base !important;
+	}
 }
