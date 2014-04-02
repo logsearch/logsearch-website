@@ -5605,6 +5605,14 @@ h1[id] {
 .bs-header p {
   color: #E2F6E6;
 }
+.page-header.home,
+.lead.home {
+  text-align: center;
+  border-bottom: none;
+}
+.half-rule {
+  margin: 40px 0;
+}
 .anchor {
   position: absolute;
   top: auto;
@@ -5649,30 +5657,47 @@ h6:hover .anchor .glyphicon {
 }
 /* Outline button for use within the docs */
 .btn-outline {
-  color: #563d7c;
+  color: #03b963;
   background-color: #ffffff;
-  border-color: #e5e5e5;
+  border-color: #03b963;
 }
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active {
   color: #fff;
-  background-color: #563d7c;
-  border-color: #563d7c;
+  background-color: #03b963;
+  border-color: #03b963;
 }
 /* Inverted outline button (white on dark) */
 .btn-outline-inverse {
   color: #ffffff;
   background-color: transparent;
-  border-color: #cdbfe3;
+  border-color: #b0e3b6;
 }
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
 .btn-outline-inverse:active {
-  color: #563d7c;
+  color: #03b963;
   text-shadow: none;
   background-color: #fff;
   border-color: #fff;
+}
+.label.home {
+  font-size: 11px;
+  position: absolute;
+  top: 20%;
+  margin-left: 10px;
+}
+.ls-home-featurette .feature h3,
+.ls-home-featurette .feature p {
+  text-align: center;
+}
+.ls-home-featurette .feature p {
+  line-height: 1.5;
+}
+.ls-home-featurette .feature .label {
+  font-size: 11px;
+  vertical-align: middle;
 }
 /*
  * Callouts
@@ -5799,6 +5824,10 @@ h6:hover .anchor .glyphicon {
 .bs-header .container {
   position: relative;
 }
+.bs-header .glyphicon {
+  color: #E2F6E6;
+  font-size: 15px;
+}
 @media (min-width: 768px) {
   .bs-header {
     font-size: 21px;
@@ -5856,7 +5885,7 @@ h6:hover .anchor .glyphicon {
 .bs-footer {
   padding-top: 40px;
   padding-bottom: 30px;
-  margin-top: 100px;
+  margin-top: 50px;
   color: #777;
   text-align: center;
   border-top: 1px solid #e5e5e5;
@@ -6575,6 +6604,14 @@ h6:hover .anchor .glyphicon {
   background-color: #26e281;
   border-color: #26e281;
 }
+.bs-docs-nav .navbar-toggle .icon-bar {
+  border-color: #26e281;
+  background-color: #26e281;
+}
+.bs-docs-nav .navbar-toggle:hover .icon-bar {
+  background-color: #fff;
+  border-color: #fff;
+}
 /*
  * bs-docs side navigation
  *
@@ -6592,7 +6629,7 @@ h6:hover .anchor .glyphicon {
   padding-top: 10px;
   padding-bottom: 10px;
   text-shadow: 0 1px 0 #fff;
-  background-color: #f7f5fa;
+  background-color: #f5faf5;
   border-radius: 5px;
 }
 /* All levels of nav */
@@ -6604,16 +6641,16 @@ h6:hover .anchor .glyphicon {
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
   text-decoration: none;
-  background-color: #e5e3e9;
-  border-right: 1px solid #dbd8e0;
+  background-color: #E3E9E4;
+  border-right: 1px solid #D9E0D8;
 }
 .bs-sidebar .nav > .active > a,
 .bs-sidebar .nav > .active:hover > a,
 .bs-sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #563d7c;
+  color: #333;
   background-color: transparent;
-  border-right: 1px solid #563d7c;
+  border-right: 1px solid #333;
 }
 /* Nav: second level (shown on .active) */
 .bs-sidebar .nav .nav {
@@ -6693,6 +6730,17 @@ h6:hover .anchor .glyphicon {
 }
 .belt strong {
   color: #555;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 34px;
+  margin-right: 20px;
+}
+.belt .form-inline {
+  display: inline-table;
+}
+.belt .form-control {
+  min-width: 250px;
+  border-radius: 4px 0 0 4px !important;
 }
 #toc-list {
   list-style-type: none;
