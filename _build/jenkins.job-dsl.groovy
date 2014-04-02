@@ -11,6 +11,9 @@ job {
         branch('*/master')
       }
     }
+    triggers {
+      githubPush()
+    }
     wrappers {
         colorizeOutput('xterm')
     }
