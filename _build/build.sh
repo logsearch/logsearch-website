@@ -6,5 +6,5 @@ popd > /dev/null
 pushd $SCRIPT_PATH/..
 
 npm install
-bower install
+bower install --allow-root
 grunt
