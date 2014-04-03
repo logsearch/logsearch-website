@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     {{> head }}
-  </head>
-  <body>
-    {{#if production}}
-      {{> tags }} {{! Google Tags. See https://www.google.com/tagmanager/}}
-    {{/if}}
+</head>
+<body>
+{{#if production}}
+    {{> tags }} {{! Google Tags. See https://www.google.com/tagmanager/}}
+{{/if}}
 
-    <a class="sr-only" href="#content">Skip to main content</a>
-    <!-- Navigation component -->
-    {{> nav-main }}
+<a class="sr-only" href="#content">Skip to main content</a>
+<!-- Navigation component -->
+{{> nav-main }}
 
-    <!-- Subhead component -->
-    {{> subhead }}
+<!-- Subhead component -->
+{{> subhead }}
 
-    <!-- Belt component -->
+<!-- Belt or Breadcrumbs component -->
+{{#is basename "index" }}
     {{> belt }}
+{{/is}}
+{{#is basename "about" }}
+    {{> breadcrumbs }}
+{{/is}}
 
-    <div class="container bs-docs-container">
-      {{> body }}
-    </div>
+<div class="container bs-docs-container">
+    {{> body }}
+</div>
 
-    <!-- Footer -->
-    {{> footer }}
+<!-- Footer -->
+{{> footer }}
 
-    <!-- JS and analytics only. -->
-    {{> javascripts }}
-  </body>
+<!-- JS and analytics only. -->
+{{> javascripts }}
+</body>
 </html>
