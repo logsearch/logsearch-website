@@ -74,7 +74,7 @@ url:
 
 # SEO/SEM
 ga:
-  id:             false
+  id:             UA-20614228-9
   domain:         logsearch.io
   siteid:         false
   # Google Tags (see: https://www.google.com/tagmanager/)
