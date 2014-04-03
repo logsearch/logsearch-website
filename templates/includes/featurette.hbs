@@ -1,9 +1,5 @@
 <div class="ls-home-featurette">
 
-    <p class="lead home"><em>Just add credentials</em> deployment of your own Elasticsearch ELK log analysis cluster on any <a title="AWS, OpenStack, Google App Engine, vSphere">modern</a> cloud.</p>
-
-    <hr class="half-rule">
-
     <div class="row">
         <div class="col-sm-4 feature">
             <img src="assets/images/performance.png" alt="Powerful performance" class="img-responsive">
@@ -24,7 +20,7 @@
             <ul>
                 <li><a title="... except for the queue; but we're working on that :-)">All</a> components are horizontally scalable</li>
                 <li>Change a config file and redeploy to scale up or down in minutes</li>
-                <li>Zero downtime deploys.  Roll changes across redundant components to ensure no loss of service.</li>
+                <li>Zero downtime deploys.  Roll changes across redundant components to ensure no loss of service</li>
             </ul>
         </div>
         <div class="col-sm-4 feature">
@@ -35,7 +31,7 @@
             <ul>
                 <li>#monitoring_<strike>sucks</strike>&nbsp;rocks!</li>
                 <li>REST api for searching all your logs</li>
-                <li>A toolkit for automating the watching of dashboards / metrics and alerting you when the unexpected happens</li>
+                <li>Automatically alerting you to the unexpected</li>
             </ul>
            
         </div>
@@ -44,9 +40,14 @@
 
     <hr class="half-rule">
 
-    <p class="lead">Join our open source community and help redefine #monitoring_sucks to #monitoring_rocks!</p>    <a href="https://github.com/logsearch/logsearch" target="_blank" class="btn btn-outline">View the GitHub project</a>
-    <a href="https://github.com/logsearch/logsearch" target="_blank" class="btn btn-outline">View the GitHub project</a>
-    <a href="{{relative page.dest "_gh_pages/subscribe.html"}}" class="btn btn-outline">Subscribe to Logsearch news</a>
-
-
+    <div class="row">
+        <div class="col-sm-6">
+            <p class="lead">Join our open source community and help redefine #monitoring_sucks to #monitoring_rocks!</p>
+            <a href="https://github.com/logsearch/logsearch" target="_blank" class="btn btn-outline">View the GitHub project</a>
+            <a href="{{relative page.dest "_gh_pages/subscribe.html"}}" class="btn btn-outline">Subscribe to Logsearch news</a>
+        </div>
+        <div class="col-sm-6">
+            <p class="lead">Just add credentials deployment of your own Elasticsearch ELK log analysis cluster on any <a title="AWS, OpenStack, Google App Engine, vSphere">modern</a> cloud.</p>
+        </div>
+    </div>
 </div>
