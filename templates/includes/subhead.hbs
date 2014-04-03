@@ -1,13 +1,22 @@
 <div class="bs-header" id="content">
 	<div class="container">
-		<h1>{{title}}</h1>
-
-        {{! this 'default' helper uses the first variable if it exists, otherwise the second}}
-		<p>
-            {{default lead description}}
-            {{#is basename "index" }}
-                {{> popover popover.elk }}
-            {{/is}}
-		</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-lead pull-left">
+                    <h1>{{title}}</h1>
+                    {{! this 'default' helper uses the first variable if it exists, otherwise the second}}
+                    <p>
+                        {{default lead description}}
+                        {{#is basename "index" }}
+                            {{> popover popover.elk }}
+                        {{/is}}
+                    </p>
+                </div>
+                <div class="ciattr pull-right">
+                    <p>Open source software from:</p>
+                    <a href="http://www.cityindex.co.uk" target="_blank"><img src="assets/images/city-index-logo.png" alt="City Index"></a>
+                </div>
+            </div>
+        </div>
 	</div>
 </div>

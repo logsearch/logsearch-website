@@ -4,23 +4,26 @@
  * Jumbotron-esque headers at the top of every page that's not the homepage.
  */
 
-
 /* Page headers */
 .bs-header {
-  padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
-  font-size: 16px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+	padding: 30px 15px 40px; /* side padding builds on .container 15px, so 30px */
+	font-size: 16px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .15);
 }
+
 .bs-header h1 {
-  color: #fff;
+	color: #fff;
+	margin: 15px 0;
 }
+
 .bs-header p {
-  font-weight: 300;
-  line-height: 1.5;
+	font-weight: 300;
+	line-height: 1.5;
 }
+
 .bs-header .container {
-  position: relative;
+	position: relative;
 }
 
 .bs-header .glyphicon {
@@ -29,19 +32,37 @@
 }
 
 @media (min-width: 768px) {
-  .bs-header {
-    font-size: 21px;
-    text-align: left;
-  }
-  .bs-header h1 {
-    font-size: 55px;
-    line-height: 1;
-  }
+	.bs-header {
+		font-size: 21px;
+		text-align: left;
+	}
+
+	.bs-header h1 {
+		font-size: 55px;
+		line-height: 1;
+	}
 }
 
-@media (min-width: 992px) {
-  .bs-header h1,
-  .bs-header p {
-    margin-right: 380px;
-  }
+.ciattr {
+	background: rgba(0,0,0,0.75);
+	border-radius: 4px;
+	padding: 20px;
+	text-align: center;
+	margin: 15px 0 0;
+
+	p {
+		color: #fff;
+		font-size: 13px;
+		letter-spacing: 0.05em;
+	}
+
+	img {
+		padding-bottom: 5px;
+		border-bottom: 1px dashed transparent;
+		height: 31px;
+	}
+
+	a:hover img {
+		border-bottom-color: #ffd600;
+	}
 }
