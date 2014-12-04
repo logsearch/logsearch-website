@@ -99,7 +99,7 @@ module.exports = function (grunt) {
 			},
             docs: {
                 files: [
-					{expand: true, cwd: '<%= site.docs %>', src: ['*.*'], dest: '<%= site.dest %>/docs/'}
+					{expand: true, cwd: '<%= site.docs %>', src: ['**/*'], dest: '<%= site.dest %>/docs/'}
 				]
             }
 		},
