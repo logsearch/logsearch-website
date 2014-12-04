@@ -96,7 +96,12 @@ module.exports = function (grunt) {
 					{expand: true, cwd: '<%= bootstrap %>/dist/fonts', src: ['*.*'], dest: '<%= site.assets %>/fonts/'},
 					{expand: true, cwd: '<%= bootstrap %>/dist/js', src: ['*.*'], dest: '<%= site.assets %>/js/'}
 				]
-			}
+			},
+            docs: {
+                files: [
+					{expand: true, cwd: '<%= site.docs %>', src: ['*.*'], dest: '<%= site.dest %>/docs/'}
+				]
+            }
 		},
 
 		watch: {
@@ -128,5 +133,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('docs', ['readme', 'sync']);
 
 	// Use this going forward.
-	grunt.registerTask('default', ['clean', 'jshint', 'copy:assets', 'assemble', 'less', 'docs']);
+	grunt.registerTask('default', ['clean', 'jshint', 'copy', 'assemble', 'less', 'docs']);
 };
