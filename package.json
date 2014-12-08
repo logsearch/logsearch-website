@@ -45,7 +45,8 @@
     "handlebars-helper-br": "~0.1.0",
     "lodash": "~2.4.1",
     "pretty": "~0.1.2",
-    "showup": "~0.1.2"
+    "showup": "~0.1.2",
+    "grunt-contrib-connect": "~0.9.0"
   },
   "keywords": [
     "assemble boilerplate",

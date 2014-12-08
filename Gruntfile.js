@@ -110,10 +110,19 @@ module.exports = function (grunt) {
 				tasks: ['jshint', 'nodeunit']
 			},
 			site: {
-				files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs'],
+				files: ['Gruntfile.js', '<%= less.options.paths %>/*.less', 'templates/**/*.hbs', 'docs/**/*'],
 				tasks: ['design']
 			}
-		}
+		},
+
+		connect: {
+    			server: {
+      				options: {
+        				useAvailablePort: true,
+        				base: '_gh_pages'
+      				}
+    			}
+  		}
 	});
 
 	// Load npm plugins to provide necessary tasks.
@@ -121,6 +130,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-readme');
 	grunt.loadNpmTasks('grunt-sync-pkg');
 	grunt.loadNpmTasks('assemble-less');
@@ -129,6 +139,8 @@ module.exports = function (grunt) {
 	// Build HTML, compile LESS and watch for changes. You must first run "bower install"
 	// or install Bootstrap to the "vendor" directory before running this command.
 	grunt.registerTask('design', ['clean', 'assemble', 'less:site', 'watch:site']);
+	
+	grunt.registerTask('server', ['clean', 'assemble', 'less:site', 'connect:server', 'watch:site']);
 
 	grunt.registerTask('docs', ['readme', 'sync']);
 
