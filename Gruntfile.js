@@ -114,15 +114,14 @@ module.exports = function (grunt) {
 				tasks: ['design']
 			}
 		},
-
 		connect: {
-    			server: {
-      				options: {
-        				useAvailablePort: true,
-        				base: '_gh_pages'
-      				}
-    			}
-  		}
+			server: {
+					options: {
+						useAvailablePort: true,
+						base: '_gh_pages'
+				}
+			}
+		}
 	});
 
 	// Load npm plugins to provide necessary tasks.
