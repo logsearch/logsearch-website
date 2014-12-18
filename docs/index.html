@@ -1,85 +1,20 @@
-<!doctype html>
-<!--
+---
+layout: "default"
+title: "Documentation"
+lead: "Learn more about the logsearch projects..."
+---
 
-  Instructions:
+<h3><a href="./boshrelease/">Logsearch (BOSH Release)</a></h3>
 
-  - Save this file.
-  - Replace "USER" with your GitHub username.
-  - Replace "REPO" with your GitHub repo name.
-  - Replace "Your Project" with your project name.
-  - Upload this file (or commit to GitHub Pages).
+Learn about setting up, managing, and operational tasks required in running your own logsearch deployment.
 
-  Customize as you see fit!
 
--->
-<html>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
+<h3><a href="./shipper-boshrelease/">Logsearch Shipper (BOSH Release)</a></h3>
 
-  <title>Logsearch Documentation</title>
+Learn about the BOSH release which enables any BOSH-managed instance to forward their logs and operational metrics into
+your own logsearch deployment.
 
-  <!-- Flatdoc -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'></script>
-  <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script>
 
-  <!-- Flatdoc theme -->
-  <link  href='theme/style.css' rel='stylesheet'>
-  <script src='theme/script.js'></script>
+<h3><a href="./filters-common/">Filters</a></h3>
 
-  <!-- Meta -->
-  <meta content="Flatdoc Test" property="og:title">
-  <meta content="Testing Flatdoc for documentation." name="description">
-
-  <!-- Initializer -->
-  <script>
-    Flatdoc.run({
-      fetcher: Flatdoc.github('logsearch/docs')
-//      fetcher: Flatdoc.github('logsearch/docs', 'developer/README.md')
-    });
-  </script>
-</head>
-<body role='flatdoc'>
-
-  <div class='header'>
-    <div class='left'>
-      <h1>Logsearch Documentation</h1>
-<!--      <ul>
-        <li><a href='https://github.com/ryanholder/flatdoc-test'>View on GitHub</a></li>
-        <li><a href='https://github.com/ryanholder/flatdoc-test/issues'>Issues</a></li>
-      </ul>-->
-    </div>
-    <div class='right'>
-      <!-- GitHub buttons: see http://ghbtns.com -->
-      <iframe src="http://ghbtns.com/github-btn.html?user=ryanholder&amp;repo=flatdoc-test&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-    </div>
-  </div>
-
-  <div class='content-root'>
-    <div class='menubar'>
-<!--
-      <div class="section primary-menu">
-        <ul>
-          <li>
-            <a href="../index.html">Main Docs</a>
-          </li>
-          <li>
-            <a href="../folder-a/index.html">Docs in Folder A</a>  
-          </li>
-          <li>
-            <a href="../folder-b/index.html">Docs in Folder B</a>  
-          </li>
-        </ul>
-        
-        
-      </div>
--->
-      <div class='menu section' role='flatdoc-menu'></div>
-    </div>
-    <div role='flatdoc-content' class='content'></div>
-  </div>
-
-</body>
-</html>
+Learn about how logstash filters are managed and what's involved in writing and testing custom log formats.

@@ -1,109 +1,37 @@
-# =============================================
-# Build config
-# =============================================
-
-root:             _gh_pages
-dest:             <%= site.root %>
-assets:           <%= site.dest %>/assets
-
-# Data
-data:             data/*.{json,yml}
-
-# Docs
-docs:             docs
-
-# Templates
-templates:        templates
-includes:         <%= site.templates %>/includes/*.hbs
-layouts:          <%= site.templates %>/layouts
-layout:           default.hbs
-
-# Extensions
-helpers:          
-  - <%= site.templates %>/helpers/*.js
-  - handlebars-helper-br
-
-plugins:
-  - assemble-contrib-anchors
-  - assemble-contrib-wordcount
-  - assemble-contrib-toc
-
-# Theme
-theme:            theme
-components:       <%= site.theme %>/components
-images:           <%= site.theme %>/images
-
-# =============================================
-# Project metadata
-# =============================================
-
-# Assemble metadata.
-assemble:
-  latest:         <%= pkg.version %>
-
-# GitHub
-username:         logsearch
-name:             <%= pkg.name %>
-download:
-  source:         <%= pkg.homepage %>/archive/master.zip
-
-
-# =============================================
-# Site metadata
-# =============================================
-
-brand:            LOGSEARCH
-title:            LOGSEARCH
-lead:             The easiest way to search logs using the power of "ELK"
-
-version:          <%= pkg.version %>
-description:      <%= pkg.description %>
-license:
-  type:           <%= pkg.licenses[0].type %>
-  url:            <%= pkg.licenses[0].url %>
-
-
-# Links
-url:
-  repo:           <%= pkg.homepage %>
-  bugs:           <%= pkg.bugs.url %>?state=open
-  ghpages:        https://<%= site.username %>.github.io/<%= pkg.name %>/
-
-  # Site
-  domain:         http://logsearch.io/
-  about:          <%= site.url.domain %>/about/
-  blog:           <%= site.url.domain %>/blog/
-
-
-# SEO/SEM
-ga:
-  id:             UA-20614228-9
-  domain:         logsearch.io
-  siteid:         false
-  # Google Tags (see: https://www.google.com/tagmanager/)
-  tags:           false
-
-# Comments
-disqus:
-  enabled:        true
-  shortname:      <%= pkg.name %>
-
-# Social
-social:
-  twitter:
-    via:          logsearch
-    username:     logsearch
-    # related:      jonschlinkert:Assemble core team.
-  facebook:       false
-  linkedin:       false
-  gplus:          false
-  hn:             false
-  google:         false
-
-# Sharing
-sharing:
-  twitter:        false
-  facebook:       false
-  gplus:          false
-  hn:             false
-  google:         false
+title: Logsearch
+description: The easiest way to search logs using the power of ELK
+url: "http://www.logsearch.io/"
+github_username: logsearch
+exclude:
+  - "Dockerfile"
+  - "README.md"
+defaults:
+  -
+    scope:
+      path: "docs"
+    values:
+      layout: "docs-default"
+  -
+    scope:
+      path: "docs/boshrelease"
+    values:
+      repo_github: "https://github.com/logsearch/logsearch-boshrelease"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Logsearch (BOSH)", "/docs/boshrelease/" ]
+  -
+    scope:
+      path: "docs/shipper-boshrelease"
+    values:
+      repo_github: "https://github.com/logsearch/logsearch-shipper-boshrelease"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Logsearch Shipper (BOSH)", "/docs/shipper-boshrelease/" ]
+  -
+    scope:
+      path: "docs/filters-common"
+    values:
+      repo_github: "https://github.com/logsearch/logsearch-filters-common"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Filters", "/docs/filters-common/" ]

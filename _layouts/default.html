@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    {% if page.nav == "Home" %}
+      {% include belt.html %}
+    {% else %}
+      {% include breadcrumbs.html %}
+    {% endif %}
+
+    <div class="container bs-docs-container">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+
+
+  </body>
+
+</html>

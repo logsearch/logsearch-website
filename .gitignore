@@ -23,3 +23,10 @@ vendor
 temp
 tmp
 /.idea/
+
+/.sass-cache
+/_site
+/Dockerfile
+/.DS_Store
+/_build/target
+/_upstream
