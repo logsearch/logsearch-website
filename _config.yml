@@ -1,16 +1,37 @@
-# =============================================
-# Site settings
-# =============================================
-
 title: Logsearch
-email: your-email@domain.com
 description: The easiest way to search logs using the power of ELK
-baseurl: ""
 url: "http://www.logsearch.io/"
-github_username:  logsearch
-
-# =============================================
-# Build settings
-# =============================================
-
-markdown: kramdown
+github_username: logsearch
+exclude:
+  - "Dockerfile"
+  - "README.md"
+defaults:
+  -
+    scope:
+      path: "docs"
+    values:
+      layout: "docs-default"
+  -
+    scope:
+      path: "docs/boshrelease"
+    values:
+      repo_github: "https://github.com/logsearch/logsearch-boshrelease"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Logsearch (BOSH)", "/docs/boshrelease/" ]
+  -
+    scope:
+      path: "docs/shipper-boshrelease"
+    values:
+      repo_github: "https://github.com/logsearch/logsearch-shipper-boshrelease"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Logsearch Shipper (BOSH)", "/docs/shipper-boshrelease/" ]
+  -
+    scope:
+      path: "docs/filters-common"
+    values:
+      repo_github: "https://github.com/logsearch/logsearch-filters-common"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Filters", "/docs/filters-common/" ]

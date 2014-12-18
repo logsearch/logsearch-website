@@ -3,7 +3,17 @@
         <div class="row">
             <div class="col-lg-12">
                 <strong>
-                    <a href="{{ site.baseurl }}/">Home</a> / {{ page.title }}
+                    <a href="/">Home</a>
+                    {% if page.prenav or page.nav %}
+                      {% for crumb in page.prenav %}
+                        / {% if crumb[1] %}<a href="{{ crumb[1] }}">{{ crumb[0] }}</a>{% else %}{{ crumb[0] }}{% endif %}
+                      {% endfor %}
+                      {% for crumb in page.nav %}
+                        / {% if crumb[1] %}<a href="{{ crumb[1] }}">{{ crumb[0] }}</a>{% else %}{{ crumb[0] }}{% endif %}
+                      {% endfor %}
+                    {% else %}
+                      / {{ page.title }}
+                    {% endif %}
                 </strong>
             </div>
         </div>
