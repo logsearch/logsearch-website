@@ -1,0 +1,75 @@
+#!/bin/bash
+
+set -e
+set -u
+
+# args: [symlink|copy=symlink]
+
+BASEDIR="${PWD}"
+UPSTREAM_DIR="${UPSTREAM_DIR:-_upstream}"
+LOAD_METHOD="${1:-symlink}"
+
+[ -d "${UPSTREAM_DIR}" ] || mkdir "${UPSTREAM_DIR}"
+
+function fetchdocs () {
+  LOCAL_PATH="$1"
+  GIT_REPO="$2"
+  GIT_PATH="$3"
+  
+  echo "--> reloading ${LOCAL_PATH}"
+
+  UPSTREAM_PATH=$( echo "${GIT_REPO}" | sed 's/[^a-z0-9]/-/g' )
+  LOCAL_PATH_DIR=$( dirname "${LOCAL_PATH}" )
+
+  #
+  # pull a new clone, or update or existing
+  #
+  if [ ! -d "${UPSTREAM_DIR}/${UPSTREAM_PATH}" ] ; then
+    git clone "${GIT_REPO}" "${UPSTREAM_DIR}/${UPSTREAM_PATH}"
+  else
+    pushd "${UPSTREAM_DIR}/${UPSTREAM_PATH}" > /dev/null
+    git pull --ff-only
+    popd > /dev/null
+  fi
+
+  #
+  # ensure we have a place to drop the files
+  #
+  if [ ! -d "${LOCAL_PATH_DIR}" ] ; then
+    mkdir -p "${LOCAL_PATH_DIR}"
+  fi
+  
+  #
+  # symlink (for development), or copy (for final builds) the files
+  #
+  if [ "${LOAD_METHOD}" == "symlink" ] ; then
+    [ ! -e "${LOCAL_PATH}" ] || unlink "${LOCAL_PATH}"
+
+    pushd "${LOCAL_PATH_DIR}" > /dev/null
+    ln -s $( echo "${LOCAL_PATH_DIR}" | sed -E 's/[^\/]+/../g' )/${UPSTREAM_DIR}/"${UPSTREAM_PATH}"/"${GIT_PATH}" $( basename "${LOCAL_PATH}" )
+    popd > /dev/null
+  elif [ "${LOAD_METHOD}" = "copy" ] ; then
+    [ ! -e "${LOCAL_PATH}" ] || rm -fr "${LOCAL_PATH}"
+    cp -r "${UPSTREAM_DIR}/${UPSTREAM_PATH}/${GIT_PATH}" "${LOCAL_PATH}"
+  fi
+}
+
+#
+# finally, apply our references
+#
+
+fetchdocs docs/boshrelease https://github.com/logsearch/logsearch-boshrelease.git docs
+fetchdocs docs/shipper-boshrelease https://github.com/logsearch/logsearch-shipper-boshrelease.git docs
+fetchdocs docs/filters-common https://github.com/logsearch/logsearch-filters-common.git docs
+
+#
+# we use README.md so they're easily browseable in source control
+# but index.md is preferable for websites
+#
+for README in $( find docs/ -name README.md ) ; do
+  pushd $( dirname "${README}" ) > /dev/null
+  
+  [ -e index.md ] || ln -s README.md index.md
+  
+  popd > /dev/null
+done
