@@ -35,3 +35,11 @@ defaults:
       prenav:
         - [ "Documentation", "/docs/" ]
         - [ "Filters", "/docs/filters-common/" ]
+  -
+    scope:
+      path: "docs/workspace"
+    values:
+      repo_github: "https://github.com/logsearch/workspace"
+      prenav:
+        - [ "Documentation", "/docs/" ]
+        - [ "Workspace", "/docs/workspace/" ]

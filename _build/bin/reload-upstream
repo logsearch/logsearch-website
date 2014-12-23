@@ -61,6 +61,7 @@ function fetchdocs () {
 fetchdocs docs/boshrelease https://github.com/logsearch/logsearch-boshrelease.git docs
 fetchdocs docs/shipper-boshrelease https://github.com/logsearch/logsearch-shipper-boshrelease.git docs
 fetchdocs docs/filters-common https://github.com/logsearch/logsearch-filters-common.git docs
+fetchdocs docs/workspace https://github.com/logsearch/workspace.git docs
 
 #
 # we use README.md so they're easily browseable in source control
