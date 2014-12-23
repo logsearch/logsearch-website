@@ -1,49 +1,21 @@
-# boilerplate [![NPM version](https://badge.fury.io/js/assemble-boilerplate.png)](http://badge.fury.io/js/assemble-boilerplate)
-
-> Boilerplate for [Assemble](https://github.com/assemble/assemble)
-
-Please [create an issue](https://github.com/assemble/boilerplate/issues) if you find a bug or have a feature request.
+This is the content for our website at [logsearch.io](http://www.logsearch.io/).
 
 
-## Getting Started
+## Quick Start
 
-**1. Download the project**
+We use [Jekyll](http://jekyllrb.com/) to build the site - make sure you have it installed first. Next, you can clone and
+this repo, run some setup scripts, and start Jekyll:
 
-Install the project locally using one of the following options:
+    $ git clone https://github.com/logsearch/logsearch-website.git
+    $ cd logsearch-website
+    $ ./_build/bin/reload-upstream
+    $ jekyll serve -w
 
-* Using git: `git clone git://github.com/assemble/boilerplate.git`
-* [Download the project](https://github.com/assemble/boilerplate/archive/master.zip)
+Now you should be able to point your browser to [`localhost:4000`](http://localhost:4000/).
 
-Next, to optionally install [Bootstrap](https://github.com/twbs/bootstrap) using [Bower](https://github.com/bower/bower), simply run
+To learn more, read our [detailed documentation](./docs/website/).
 
-```bash
-bower install
-```
-
-**2. Install Dependencies**
-
-Run `npm i` to install dependencies.
-
-**3. Build**
-
-If everything installed correctly, running `grunt` in the command line should successfully build the project to the `./_gh_pages` directory inside the project.
-
-**4. Remove "first run" Targets**
-
-Inside the [Gruntfile](./Gruntfile.js) you will find a few targets that should be removed after the first run. These are labeled accordingly.
-
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][].
 
 ## License
-Copyright (c) 2013 Jon Schlinkert
-Licensed under the [MIT license](LICENSE-MIT).
 
-***
-
-Project created by [Jon Schlinkert](https://github.com/jonschlinkert).
-
-_This file was generated on Saturday, December 7, 2013._
-
-[grunt]: http://gruntjs.com
+[Apache License, Version 2.0](./LICENSE)
