@@ -23,4 +23,30 @@
 
   </body>
 
+  <script>
+    (function (dom) {
+      function anchorize(header) {
+        if (('undefined' == typeof header.id) || ('' == header.id)) {
+          return;
+        }
+
+        var anchor = document.createElement('a');
+        anchor.className = 'anchor';
+        anchor.href = '#' + header.id;
+        anchor.innerText = '#';
+        //anchor.innerHTML = '<span class="glyphicon glyphicon-link"></span>';
+
+        header.appendChild(anchor);
+      }
+
+      for (level = 1; level < 6; level += 1) {
+        var headers = dom.getElementsByTagName('h' + level);
+
+        for (var headerIndex = 0; headerIndex < headers.length; headerIndex += 1) {
+          anchorize(headers[headerIndex]);
+        }
+      }
+    })(document.body);
+  </script>
+
 </html>
