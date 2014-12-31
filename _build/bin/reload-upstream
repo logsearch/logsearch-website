@@ -67,7 +67,7 @@ fetchdocs docs/workspace https://github.com/logsearch/workspace.git docs
 # we use README.md so they're easily browseable in source control
 # but index.md is preferable for websites
 #
-for README in $( find docs/ -name README.md ) ; do
+for README in $( find -L docs/ -name 'README.md' ) ; do
   pushd $( dirname "${README}" ) > /dev/null
   
   [ -e index.md ] || ln -s README.md index.md
