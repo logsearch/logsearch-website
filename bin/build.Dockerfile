@@ -13,4 +13,4 @@ RUN gem install \
 ADD . /task/in
 WORKDIR /task/in
 
-ENTRYPOINT [ "./_build/bin/create-final" ]
+ENTRYPOINT [ "./bin/build" ]

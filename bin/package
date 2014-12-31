@@ -12,7 +12,7 @@ ARTIFACT_NAME="$1"
 #
 
 [ ! -e _build/target ] || rm -fr _build/target
-mkdir _build/target
+mkdir -p _build/target
 git archive HEAD | tar -x -C _build/target
 
 REPODIR="${PWD}"
@@ -23,13 +23,13 @@ pushd _build/target > /dev/null
 # reload our upstreams as copies, but use a shared repo cache
 #
 
-UPSTREAM_DIR="${REPODIR}/_upstream" ./_build/bin/reload-upstream copy
+UPSTREAM_DIR="${REPODIR}/_upstream" ./bin/reload-upstream copy
 
 #
 # generate our build
 #
 
-ln -s _build/docker/create-final Dockerfile
+ln -s bin/build.Dockerfile Dockerfile
 docker build -t logsearch-website-create-final .
 docker run --rm -v "${REPODIR}"/_site:/task/in/_site logsearch-website-create-final
 
