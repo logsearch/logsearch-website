@@ -27,5 +27,5 @@ tmp
 /_site
 /Dockerfile
 /.DS_Store
-/_build/target
+/_target
 /_upstream

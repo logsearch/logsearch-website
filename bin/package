@@ -11,13 +11,13 @@ ARTIFACT_NAME="$1"
 # create a clean export to avoid unnecessary artifacts and .git metadata
 #
 
-[ ! -e _build/target ] || rm -fr _build/target
-mkdir -p _build/target
-git archive HEAD | tar -x -C _build/target
+[ ! -e _target ] || rm -fr _target
+mkdir _target
+git archive HEAD | tar -x -C _target
 
 REPODIR="${PWD}"
 
-pushd _build/target > /dev/null
+pushd _target > /dev/null
 
 #
 # reload our upstreams as copies, but use a shared repo cache
