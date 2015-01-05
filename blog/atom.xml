@@ -1,0 +1,28 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <id>http://www.logsearch.io/</id>
+   <title>Logsearch</title>
+   <link href="http://www.logsearch.io/blog/atom.xml" rel="self"/>
+   <link href="http://www.logsearch.io/"/>
+   <updated>{{ site.time|date_to_xmlschema }}</updated>
+   <author>
+       <name>Logsearch Contributors</name>
+       <uri>http://www.logsearch.io/</uri>
+   </author>
+   {% for post in site.posts %}
+       <entry>
+           <id>http://www.logsearch.io{{ post.id }}</id>
+           <title>{{ post.title }}</title>
+           <link href="http://www.logsearch.io{{ post.url }}"/>
+           <author>
+               <name>{{ post.author }} (@{{ post.author_github }})</name>
+               <uri>https://github.com/{{ post.author_github }}</uri>
+           </author>
+           <updated>{{ post.date|date_to_xmlschema }}</updated>
+           <content type="html">{{ post.content|xml_escape }}</content>
+       </entry>
+   {% endfor %}
+</feed>
