@@ -8,10 +8,10 @@ this repo, run some setup scripts, and start Jekyll:
 
     $ git clone https://github.com/logsearch/logsearch-website.git
     $ cd logsearch-website
-    $ ./_build/bin/reload-upstream
-    $ jekyll serve -w
+    $ ./bin/reload-upstream
+    $ ./bin/run-dev
 
-Now you should be able to point your browser to [`localhost:4000`](http://localhost:4000/).
+Now you should be able to point your browser to [`$LOCAL_IP:4000`](http://$LOCAL_IP:4000/). - the exact IP is displayed in the terminal.
 
 To learn more, read our [detailed documentation](./docs/website/).
 
