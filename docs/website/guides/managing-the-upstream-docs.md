@@ -7,14 +7,14 @@ with the website repository, you will typically want local copies of those repos
 
 ## Fetching Upstream Docs
 
-The [`_build/bin/reload-upstream`][1] script is responsible for downloading a copy of the referenced repositories and
+The [`bin/reload-upstream`][1] script is responsible for downloading a copy of the referenced repositories and
 including them in the website structure. The repositories will be cached in `_upstream` and the repositories' `docs`
 directories will be symlinked into the website's `/docs/` directory.
 
 To run, simply execute the script. It is safe to run many times, and each time it will run a `git pull --ff-only` to
 ensure you have the latest changes.
 
-    $ ./_build/bin/reload-upstream
+    $ ./bin/reload-upstream
     --> reloading docs/boshrelease
     Cloning into '_upstream/https---github-com-logsearch-logsearch-boshrelease-git'...
     remote: Counting objects: 2327, done.

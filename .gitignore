@@ -13,7 +13,6 @@ lib-cov
 pids
 logs
 results
-build
 npm-debug.log
 TODO.md
 
@@ -28,5 +27,5 @@ tmp
 /_site
 /Dockerfile
 /.DS_Store
-/_build/target
+/_target
 /_upstream
