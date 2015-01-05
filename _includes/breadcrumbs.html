@@ -11,6 +11,9 @@
                       {% for crumb in page.nav %}
                         / {% if crumb[1] %}<a href="{{ crumb[1] }}">{{ crumb[0] }}</a>{% else %}{{ crumb[0] }}{% endif %}
                       {% endfor %}
+                    {% elsif page.author %}
+                      / <a href="/blog/">Blog</a>
+                      / {{ page.title }}
                     {% else %}
                       / {{ page.title }}
                     {% endif %}

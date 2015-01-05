@@ -2,10 +2,16 @@ title: Logsearch
 description: The easiest way to search logs using the power of ELK
 url: "http://www.logsearch.io/"
 github_username: logsearch
+permalink: "/blog/:year/:month/:title:output_ext"
 exclude:
   - "Dockerfile"
   - "README.md"
 defaults:
+  -
+    scope:
+      path: "blog"
+    values:
+      layout: "post"
   -
     scope:
       path: "docs"
