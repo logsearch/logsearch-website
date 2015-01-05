@@ -1,6 +1,6 @@
 title: Logsearch
 description: The easiest way to search logs using the power of ELK
-url: "http://www.logsearch.io/"
+url: "http://www.logsearch.io"
 github_username: logsearch
 permalink: "/blog/:year/:month/:title:output_ext"
 exclude:
