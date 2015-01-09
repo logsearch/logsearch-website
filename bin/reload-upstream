@@ -33,6 +33,7 @@ function fetchdocs () {
   # Ensure we're on the right branch, and update
   #
   pushd "${UPSTREAM_DIR}/${UPSTREAM_PATH}" > /dev/null
+  git fetch
   git checkout $GIT_BRANCH
   git pull --ff-only
   popd > /dev/null
