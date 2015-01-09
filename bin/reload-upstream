@@ -15,6 +15,7 @@ function fetchdocs () {
   LOCAL_PATH="$1"
   GIT_REPO="$2"
   GIT_PATH="$3"
+  GIT_BRANCH="$4"
   
   echo "--> reloading ${LOCAL_PATH}"
 
@@ -22,15 +23,19 @@ function fetchdocs () {
   LOCAL_PATH_DIR=$( dirname "${LOCAL_PATH}" )
 
   #
-  # pull a new clone, or update or existing
+  # Clone if missing
   #
   if [ ! -d "${UPSTREAM_DIR}/${UPSTREAM_PATH}" ] ; then
     git clone "${GIT_REPO}" "${UPSTREAM_DIR}/${UPSTREAM_PATH}"
-  else
-    pushd "${UPSTREAM_DIR}/${UPSTREAM_PATH}" > /dev/null
-    git pull --ff-only
-    popd > /dev/null
   fi
+  
+  #
+  # Ensure we're on the right branch, and update
+  #
+  pushd "${UPSTREAM_DIR}/${UPSTREAM_PATH}" > /dev/null
+  git checkout $GIT_BRANCH
+  git pull --ff-only
+  popd > /dev/null
 
   #
   # ensure we have a place to drop the files
@@ -58,10 +63,10 @@ function fetchdocs () {
 # finally, apply our references
 #
 
-fetchdocs docs/boshrelease https://github.com/logsearch/logsearch-boshrelease.git docs
-fetchdocs docs/shipper-boshrelease https://github.com/logsearch/logsearch-shipper-boshrelease.git docs
-fetchdocs docs/filters-common https://github.com/logsearch/logsearch-filters-common.git docs
-fetchdocs docs/workspace https://github.com/logsearch/workspace.git docs
+fetchdocs docs/boshrelease https://github.com/logsearch/logsearch-boshrelease.git docs getting-started-with-logsearch-workspace
+fetchdocs docs/shipper-boshrelease https://github.com/logsearch/logsearch-shipper-boshrelease.git docs master
+fetchdocs docs/filters-common https://github.com/logsearch/logsearch-filters-common.git docs master
+fetchdocs docs/workspace https://github.com/logsearch/workspace.git docs master
 
 #
 # we use README.md so they're easily browseable in source control
