@@ -54,6 +54,9 @@ and its arguments:
         
         # the repository path to the docs
         "docs"
+
+        # the upstream branch to use (optional, defaults to master)
+        "master"
     )
 
 Review the end of `reload-upstream` to see the current repository references and examples on usage.
