@@ -1,7 +1,7 @@
 <div class="belt">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <strong>
                     <a href="/">Home</a>
                     {% if page.prenav or page.nav %}
@@ -19,6 +19,16 @@
                     {% endif %}
                 </strong>
             </div>
+            {% if page.url contains "/blog/" %}
+            <div class="col-lg-4">
+                <div class="pull-right">
+                    <strong>
+
+                        <a href="http://www.logsearch.io/feed.xml">Subscibe via RSS <img src="{{ site.url }}/images/rss-icon.png" alt="Subscribe via RSS"></a>
+                    </strong>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
