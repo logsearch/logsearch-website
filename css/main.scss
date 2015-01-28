@@ -49,14 +49,19 @@ $on-laptop:        800px;
         "site"
 ;
 
-.bs-docs-container *[id]:before {
-  display: block;
-  content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
+h2[id],
+h1[id] {
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 
 a.anchor {
   visibility: hidden;
+}
+
+pre,
+pre code {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
