@@ -2,8 +2,4 @@
 
 LOCAL_IP=${LOCAL_IP:=0.0.0.0}
 
-echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-echo "You can ignore: ** ERROR: directory is already being watched! **"
-echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-
-jekyll server --host $LOCAL_IP --watch
+jekyll server --host $LOCAL_IP --no-watch
