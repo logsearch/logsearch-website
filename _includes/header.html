@@ -16,6 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a class="page-link" href="/about.html">About</a></li>
+        <li><a class="page-link" href="https://github.com/logsearch" target="_blank">GitHub</a></li>
         <li><a class="page-link" href="/subscribe.html">Subscribe</a></li>
       </ul>
     </nav>
@@ -27,11 +28,9 @@
       <div class="col-sm-12">
         <div class="page-title-lead pull-left">
           <h1>{{ page.title }}</h1>
-          <p>{% if page.lead %}{{ page.lead }}{% else %}&nbsp;{% endif %}</p>
-        </div>
-        <div class="ciattr pull-right">
-          <p>Open source software from:</p>
-          <a href="http://www.cityindex.co.uk" target="_blank"><img src="/images/city-index-logo.png" alt="City Index"></a>
+          {% if page.lead %}
+          <p>{{ page.lead }}</p>
+          {% endif %}
         </div>
       </div>
     </div>
