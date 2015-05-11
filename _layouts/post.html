@@ -7,7 +7,8 @@ layout: default
     <div class="bs-sidebar hidden-print" role="complementary">
       <div style="margin:30px 10px 30px 0;color:#494949">
         <p>
-          By {{ page.author }} (<a href="https://github.com/{{ page.author_github }}">@{{ page.author_github }}</a>)<br />
+          By {% if page.author_website %}<a href="{{ page.author_website }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %}
+          (<a href="https://github.com/{{ page.author_github }}">@{{ page.author_github }}</a>)<br />
           {{ page.date|date:"%A, %B %d, %Y" }}
         </p>
         <p><small>{{ page.description }}</small></p>
