@@ -1,17 +1,17 @@
 ---
 title: Snapshots with BOSH and Logsearch
-description: "A tutorial/blog post on how to perform snapshots and restors with logsearch"
+description: "A tutorial/blog post on how to perform snapshots and restores with logsearch"
 audience: writer, designer
 author: "Alan Moran and Luke Rabczak"
 author_github: "bonzofenix+cloud-dude"
 tags: logsearch, elasticsearch
 ---
 
-Logsearch relays on Elasticsearch for data persistence. There are situations in which you want to have your data replicated outside of your Elasticsearch cluster. For this Elasticsearch provides data snapshots and restore.
+Logsearch relys on Elasticsearch for data persistence. There are situations in which you want to have your data replicated outside of your Elasticsearch cluster (for example migrating data between clusters). For this Elasticsearch provides data snapshots and restore.
 
-This requires a shared file system repository. Such as NFS, S3 repositories, HDFS repositories on hadoop, or Azure storage repositores.
+This requires a shared file system repository such as NFS, S3 repositories, HDFS repositories on hadoop, or Azure storage repositories.
 
-Following two assumptions needs to be considered:
+The following two assumptions needs to be considered:
 
 - You should have a Logsearch deployment in place.
 - You should also have a NFS mount point (If you do not you can deploy one with the [nfs-boshrelease](https://github.com/compozed/nfs-boshrelease)). 
@@ -172,5 +172,5 @@ Importing indices is fairly easy:
 
 ![blog-img](/blog/uploads/2015-08-06-snapshots-with-bosh-and-logsearch/perform-restore-2.png)
 
-After the restoring proccess is complete and the Elasticsearch cluster balances the new restored indexes and shards, logsearch should have all the previos logs.
+After the restoring proccess is complete and the Elasticsearch cluster balances the new restored indexes and shards, logsearch should have all the previous logs.
 
