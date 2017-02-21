@@ -7,12 +7,6 @@
 
     {% include header.html %}
 
-    {% if page.nav == "Home" %}
-      {% include belt.html %}
-    {% else %}
-      {% include breadcrumbs.html %}
-    {% endif %}
-
     <div class="container bs-docs-container">
       {{ content }}
     </div>
